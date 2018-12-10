@@ -13,6 +13,7 @@
 		CB18E1BB21BE751A001D85FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB18E1BA21BE751A001D85FA /* Assets.xcassets */; };
 		CB18E1BE21BE751A001D85FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB18E1BC21BE751A001D85FA /* LaunchScreen.storyboard */; };
 		CB18E1C621BE7C7E001D85FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB18E1C521BE7C7E001D85FA /* Main.storyboard */; };
+		CB18E1C821BEA281001D85FA /* CreatNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18E1C721BEA281001D85FA /* CreatNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CB18E1BD21BE751A001D85FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB18E1BF21BE751A001D85FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB18E1C521BE7C7E001D85FA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CB18E1C721BEA281001D85FA /* CreatNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CB18E1BC21BE751A001D85FA /* LaunchScreen.storyboard */,
 				CB18E1BF21BE751A001D85FA /* Info.plist */,
 				CB18E1B721BE751A001D85FA /* HW4.xcdatamodeld */,
+				CB18E1C721BEA281001D85FA /* CreatNoteViewController.swift */,
 			);
 			path = HW4;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB18E1C821BEA281001D85FA /* CreatNoteViewController.swift in Sources */,
 				CB18E1B921BE751A001D85FA /* HW4.xcdatamodeld in Sources */,
 				CB18E1B321BE751A001D85FA /* ViewController.swift in Sources */,
 				CB18E1B121BE751A001D85FA /* AppDelegate.swift in Sources */,
