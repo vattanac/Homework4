@@ -34,6 +34,9 @@
                                             <constraint firstAttribute="height" constant="30" id="4Vh-4L-0ir"/>
                                         </constraints>
                                         <state key="normal" image="camera"/>
+                                        <connections>
+                                            <segue destination="g4d-Vs-1pS" kind="show" id="Vzm-wZ-dtr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-dl-1RT">
                                         <rect key="frame" x="321" y="11" width="30" height="30"/>
@@ -42,6 +45,9 @@
                                             <constraint firstAttribute="width" constant="30" id="c2B-JV-pDq"/>
                                         </constraints>
                                         <state key="normal" image="voice"/>
+                                        <connections>
+                                            <segue destination="g4d-Vs-1pS" kind="show" id="xRE-ke-elQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1v-lk-PEU">
                                         <rect key="frame" x="283" y="11" width="30" height="30"/>
@@ -50,6 +56,9 @@
                                             <constraint firstAttribute="height" constant="30" id="gma-eD-98I"/>
                                         </constraints>
                                         <state key="normal" image="pen"/>
+                                        <connections>
+                                            <segue destination="g4d-Vs-1pS" kind="show" id="W7m-5b-JV1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdZ-I8-To1">
                                         <rect key="frame" x="240" y="11" width="30" height="30"/>
@@ -110,7 +119,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmc-Xw-gwZ">
-                                                    <rect key="frame" x="9" y="30" width="168" height="21"/>
+                                                    <rect key="frame" x="9" y="30" width="168" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -217,6 +226,9 @@
                                             <constraint firstAttribute="height" constant="30" id="QOx-3h-UoT"/>
                                         </constraints>
                                         <state key="normal" image="more"/>
+                                        <connections>
+                                            <action selector="RightTabbarItem:" destination="g4d-Vs-1pS" eventType="touchUpInside" id="eD9-Ge-SIn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBz-n1-0bk">
                                         <rect key="frame" x="15" y="13" width="30" height="30"/>
@@ -225,6 +237,9 @@
                                             <constraint firstAttribute="height" constant="30" id="xFd-cj-ANo"/>
                                         </constraints>
                                         <state key="normal" image="add"/>
+                                        <connections>
+                                            <action selector="LeftTabbarItem:" destination="g4d-Vs-1pS" eventType="touchUpInside" id="3CO-fG-e0c"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.8747681222" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,5 +341,8 @@
         <image name="search" width="32" height="32"/>
         <image name="voice" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4Ms-KI-cRt"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
