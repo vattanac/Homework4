@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="2iE-u9-OTZ">
             <objects>
-                <viewController id="q6d-gm-6L9" customClass="ViewController" customModule="HW4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="q6d-gm-6L9" customClass="ViewController" customModule="HW4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kcv-xp-Nqg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                         <state key="normal" image="list"/>
                                         <connections>
                                             <action selector="Noting:" destination="q6d-gm-6L9" eventType="touchUpInside" id="BO0-PD-uKk"/>
-                                            <segue destination="g4d-Vs-1pS" kind="show" id="1KW-hg-0g4"/>
+                                            <segue destination="g4d-Vs-1pS" kind="show" id="4Ms-KI-cRt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -96,7 +96,7 @@
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell_id" id="NdM-ge-wln">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell_id" id="NdM-ge-wln" customClass="CollectionViewCell" customModule="HW4" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="182" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -128,6 +128,10 @@
                                             <constraint firstItem="0he-HS-n6Y" firstAttribute="top" secondItem="NdM-ge-wln" secondAttribute="top" constant="9" id="rl6-Qy-0jM"/>
                                             <constraint firstAttribute="trailing" secondItem="8b1-FX-7me" secondAttribute="trailing" constant="7" id="wcu-3E-bWu"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="desLabel" destination="8b1-FX-7me" id="uzy-FJ-4aa"/>
+                                            <outlet property="titleLabel" destination="0he-HS-n6Y" id="wnJ-DO-sli"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tiq-iU-Pjp">
@@ -184,18 +188,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5d-SS-MQf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2059.4202898550725" y="136.14130434782609"/>
+            <point key="canvasLocation" x="2188" y="130"/>
         </scene>
         <!--Creat Note View Controller-->
         <scene sceneID="h7E-dM-SaM">
             <objects>
-                <viewController storyboardIdentifier="creatNote" id="g4d-Vs-1pS" customClass="CreatNoteViewController" customModule="HW4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="creat" id="g4d-Vs-1pS" customClass="CreatNoteViewController" customModule="HW4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TAP-Vx-urC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f1Y-8E-QAW">
-                                <rect key="frame" x="20" y="147" width="374" height="30"/>
+                                <rect key="frame" x="16" y="147" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -233,24 +237,33 @@
                                     <constraint firstItem="Sfu-6Q-hxN" firstAttribute="top" secondItem="sNm-pS-3Yz" secondAttribute="top" constant="13" id="mJE-JQ-6wP"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Vl-OT-Mcs">
-                                <rect key="frame" x="20" y="196" width="382" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Vl-OT-Mcs">
+                                <rect key="frame" x="20" y="192" width="382" height="29"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G2j-JZ-8Ml">
+                                <rect key="frame" x="14" y="182" width="380" height="475"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3Vl-OT-Mcs" firstAttribute="top" secondItem="f1Y-8E-QAW" secondAttribute="bottom" constant="19" id="6A9-9S-4O3"/>
                             <constraint firstItem="p6o-Wg-h1m" firstAttribute="leading" secondItem="Wb9-CL-DII" secondAttribute="leading" id="Aj5-Bf-0Zz"/>
-                            <constraint firstItem="f1Y-8E-QAW" firstAttribute="leading" secondItem="Wb9-CL-DII" secondAttribute="leading" constant="20" id="FAn-xn-XNM"/>
+                            <constraint firstItem="G2j-JZ-8Ml" firstAttribute="leading" secondItem="Wb9-CL-DII" secondAttribute="leading" constant="14" id="BOD-Lt-VLn"/>
+                            <constraint firstItem="3Vl-OT-Mcs" firstAttribute="top" secondItem="f1Y-8E-QAW" secondAttribute="bottom" constant="15" id="BZv-oi-y0h"/>
+                            <constraint firstItem="G2j-JZ-8Ml" firstAttribute="top" secondItem="f1Y-8E-QAW" secondAttribute="bottom" constant="5" id="DjD-C3-GTe"/>
+                            <constraint firstItem="f1Y-8E-QAW" firstAttribute="leading" secondItem="Wb9-CL-DII" secondAttribute="leading" constant="16" id="FAn-xn-XNM"/>
                             <constraint firstItem="sNm-pS-3Yz" firstAttribute="trailing" secondItem="Wb9-CL-DII" secondAttribute="trailing" id="H7H-r7-FPI"/>
                             <constraint firstItem="f1Y-8E-QAW" firstAttribute="top" secondItem="TAP-Vx-urC" secondAttribute="top" constant="147" id="KjG-Ww-271"/>
+                            <constraint firstItem="sNm-pS-3Yz" firstAttribute="top" secondItem="G2j-JZ-8Ml" secondAttribute="bottom" constant="25" id="NvP-kz-rZJ"/>
                             <constraint firstItem="f1Y-8E-QAW" firstAttribute="top" secondItem="p6o-Wg-h1m" secondAttribute="bottom" constant="19.000000000000028" id="RsS-bE-UhW"/>
                             <constraint firstItem="p6o-Wg-h1m" firstAttribute="trailing" secondItem="Wb9-CL-DII" secondAttribute="trailing" id="Tz8-nn-amQ"/>
                             <constraint firstItem="3Vl-OT-Mcs" firstAttribute="leading" secondItem="Wb9-CL-DII" secondAttribute="leading" constant="20" id="Vun-fm-FRY"/>
-                            <constraint firstItem="Wb9-CL-DII" firstAttribute="trailing" secondItem="f1Y-8E-QAW" secondAttribute="trailing" constant="20" id="Yy8-Mv-lDA"/>
+                            <constraint firstItem="Wb9-CL-DII" firstAttribute="trailing" secondItem="f1Y-8E-QAW" secondAttribute="trailing" constant="24" id="Yy8-Mv-lDA"/>
+                            <constraint firstItem="Wb9-CL-DII" firstAttribute="trailing" secondItem="G2j-JZ-8Ml" secondAttribute="trailing" constant="20" id="bqE-z3-v2Q"/>
                             <constraint firstItem="Wb9-CL-DII" firstAttribute="trailing" secondItem="3Vl-OT-Mcs" secondAttribute="trailing" constant="12" id="j7D-Xh-Me0"/>
                             <constraint firstItem="p6o-Wg-h1m" firstAttribute="top" secondItem="TAP-Vx-urC" secondAttribute="top" id="oz0-8H-lYg"/>
                             <constraint firstItem="sNm-pS-3Yz" firstAttribute="leading" secondItem="Wb9-CL-DII" secondAttribute="leading" id="pkh-nZ-XW6"/>
@@ -271,10 +284,15 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="TextFieldFack" destination="G2j-JZ-8Ml" id="gjM-9M-y5S"/>
+                        <outlet property="noteTextField" destination="3Vl-OT-Mcs" id="86I-cJ-egW"/>
+                        <outlet property="titleTextfield" destination="f1Y-8E-QAW" id="bna-d1-nSl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1H9-5d-s1Q" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2873.913043478261" y="129.61956521739131"/>
+            <point key="canvasLocation" x="2830.434782608696" y="129.61956521739131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nce-nq-57K">

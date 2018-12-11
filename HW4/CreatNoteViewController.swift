@@ -7,14 +7,40 @@
 //
 
 import UIKit
-
-class CreatNoteViewController: UIViewController {
-
+import CoreData
+class CreatNoteViewController: UIViewController ,UITextViewDelegate {
+    
+    @IBOutlet weak var TextFieldFack: UITextView!
+    @IBOutlet weak var noteTextField: UITextField!
+    @IBOutlet weak var titleTextfield: UITextField!
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    lazy var  context = appDelegate.persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        TextFieldFack.delegate = self
+
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        noteTextField.placeholder = ""
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if noteTextField.placeholder == ""{
+            noteTextField.placeholder = "note"
+        }
+    }
+   
+    override func viewWillDisappear(_ animated: Bool) {
+        var note = Note(context: context)
+        note.setValue(titleTextfield.text, forKey: "title")
+        note.setValue(TextFieldFack.text, forKey: "des")
+        
+        appDelegate.saveContext()
+    }
+    
+    
     
 
 

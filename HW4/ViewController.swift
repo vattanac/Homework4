@@ -7,13 +7,39 @@
 //
 
 import UIKit
-
+import CoreData
 class ViewController: UIViewController, UITextViewDelegate, UICollectionViewDelegate , UICollectionViewDataSource {
     
 
+    
     @IBOutlet weak var collectionview: UICollectionView!
-    @IBOutlet weak var textView: UITextView!
+
     var placeholderLabel : UILabel!
+    
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var noteList = [Note]()
+    lazy var context = appDelegate.persistentContainer.viewContext
+    
+    func getData(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for note in result as! [NSManagedObject]{
+                noteList.append(note as! Note)
+                print("######\(note)")
+                appDelegate.saveContext()
+            }
+        }catch{
+            
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,8 +62,8 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewDele
     }
     
     @IBAction func Noting(_ sender: Any) {
-       
-      
+    
+    
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,15 +72,16 @@ class ViewController: UIViewController, UITextViewDelegate, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell_id", for: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell_id", for: indexPath) as! CollectionViewCell
+        
         return cell
     }
-//     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 10), height: CGFloat(100))
-//    }
+
     
     
+   
     
+   
    
 }
 
