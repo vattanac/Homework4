@@ -12,6 +12,8 @@ class CollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var desLabel: UITextView!
+    @IBOutlet weak var desLabel: UILabel!
+    
+    
     
 }
